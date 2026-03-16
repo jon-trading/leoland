@@ -13,3 +13,10 @@ venv/
 .envrc
 node_modules/
 *.lnk
+
+node_modules/
+dist/
+.build/
+.env
+*.log
+*.lnk

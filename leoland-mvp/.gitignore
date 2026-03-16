@@ -1,0 +1,14 @@
+# Secrets and credentials
+.env
+secrets/
+*.json
+
+# Logs and reports
+logs/
+.cache/
+__pycache__/
+*.log
+
+# Environments
+venv/
+.envrc
