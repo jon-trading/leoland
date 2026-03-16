@@ -1,0 +1,12 @@
+clubs_and_regions:
+  role: cultural_regional_institutions
+  political_overlap: true
+  geography_overlap: true
+  future_uses:
+    - regional_flavor
+    - province_identity
+    - social_mood
+    - soft_political_identity
+  deferred:
+    - score_generator_repo_intake
+    - hard_gameplay_mechanics

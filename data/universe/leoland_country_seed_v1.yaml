@@ -1,0 +1,13 @@
+country:
+  name: Leoland
+  geography: large_north_atlantic_island_nation
+  eu_membership: true
+  population: 277000000
+  provinces_or_states: 49
+  government_form: parliamentary_democracy
+  party_system: five_party
+  economy_scale: large
+  military_posture: strong
+  regional_political_variation: true
+  notes:
+    - major national issues and voting-demographic patterns matter
