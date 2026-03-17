@@ -1,22 +1,30 @@
-import { finland, decisions } from "./engine/data";
+import { prototypeDecisions } from "./engine/data";
 import { runTurn } from "./engine/engine";
+import { createPrototypeCountryFromSeed, loadLeolandCountrySeed } from "./engine/seed";
 
-console.log(`🌍 Welcome to Leoland v0.1 — Leading: ${finland.name}\n`);
+const seed = loadLeolandCountrySeed();
+const leoland = createPrototypeCountryFromSeed(seed);
 
-decisions.forEach((d, i) => {
-  console.log(`🧭 DECISION ${i + 1}: ${d.title}`);
-  console.log(d.description);
-  d.options.forEach((opt, idx) => {
-    console.log(`  ${idx + 1}. ${opt.label}`);
+console.log(`🌍 Welcome to Leoland v0.2 — Leading: ${leoland.name}\n`);
+console.log(`🏛️ Capital: ${seed.country.capital_city}`);
+console.log(`🗳️ System: ${seed.country.government_form.split("_").join(" ")}`);
+console.log(`👥 Population: ${seed.country.population.toLocaleString()}`);
+console.log(`🧩 Major issues: ${seed.country.major_issues.slice(0, 3).join(", ")}\n`);
+
+prototypeDecisions.forEach((decision, index) => {
+  console.log(`🧭 DECISION ${index + 1}: ${decision.title}`);
+  console.log(decision.description);
+  decision.options.forEach((option, optionIndex) => {
+    console.log(`  ${optionIndex + 1}. ${option.label}`);
   });
 });
 
 const playerChoices = [
-  "Yes, long-term investment",
-  "Yes, reshape minds for future"
+  "Yes, invest for resilience",
+  "Yes, teach judgment early",
 ];
 
-runTurn(finland, playerChoices, decisions);
+runTurn(leoland, playerChoices, prototypeDecisions);
 
 console.log("\n✅ Updated Country Stats:");
-console.log(finland);
+console.log(leoland);

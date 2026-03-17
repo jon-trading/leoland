@@ -7,6 +7,9 @@ Leoland is currently seeded as:
 - a large North Atlantic island nation
 - a member of the European Union
 - population approximately `277,000,000`
+- electorate approximately `201,000,000`
+- capital city `Leograd`
+- major cities including `Northhaven`, `Aurum Bay`, `Stonerift`, and `Valemere`
 - `49` provinces or states
 - a parliamentary democracy
 - a five-party political system
@@ -22,6 +25,7 @@ These are canon seed inputs, not final mechanics.
 They should guide later:
 
 - province modeling
+- capital / city hierarchy
 - party/electorate design
 - regional political variation
 - macroeconomic posture
@@ -35,5 +39,6 @@ They should guide later:
 - party coalition logic
 - military and diplomatic posture systems
 - EU alignment / tension systems
+- city prestige and regional rivalry systems
 
 These belong to later design and schema briefs, not this intake.

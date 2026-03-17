@@ -15,9 +15,9 @@ It is not yet a playable world-state game.
 The best next move is:
 
 1. runtime cleanup and first playable shell
-2. replace Finland placeholder data with first Leoland world-state schema
-3. define first region/province and party structure
-4. introduce a real turn loop based on Leoland canon rather than example decisions
+2. define first Leoland world-state schema from the new seed layer
+3. add first region/province and party structures to runtime data
+4. introduce a real turn loop based on Leoland canon rather than illustrative decisions
 
 ## Strong recommendation
 

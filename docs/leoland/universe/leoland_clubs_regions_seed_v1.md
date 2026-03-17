@@ -9,6 +9,7 @@ Current seed interpretation:
 - clubs act as cultural and regional institutions
 - clubs can act as proxies for political and geographic identities
 - sport may overlap with region, electorate, and national mood
+- clubs can encode different regional values without forcing those values into hard mechanics yet
 - football structures may later help express local identity, rivalry, belonging, and soft ideology
 
 ## What this means now
@@ -23,6 +24,7 @@ This should be preserved as universe seed, not merged into hard gameplay or data
 - soft political identity indicators
 - news/event flavor
 - social mood or legitimacy signals
+- local media pressure
 
 ## Explicit deferment
 

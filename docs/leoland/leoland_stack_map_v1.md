@@ -8,8 +8,10 @@ Leoland is currently a very small TypeScript prototype rather than a full applic
 
 - `play.ts`: current entrypoint for the prototype run
 - `engine/types.ts`: core domain types for country, leader, values, decisions, and effects
-- `engine/data.ts`: current seed data and example decisions
+- `engine/data.ts`: bounded prototype decisions using Leoland framing
+- `engine/seed.ts`: loader that turns the YAML world seed into the current prototype country state
 - `engine/engine.ts`: turn execution logic and derived-stat updates
+- `data/universe/*.yaml`: canonical editable world seed inputs
 - `package.json`: minimal Node/TypeScript dependency manifest
 - `tsconfig.json`: TypeScript configuration
 - `RUN_LEOLAND.bat`: Windows helper from the imported snapshot
