@@ -35,17 +35,57 @@ export interface Country {
 export interface Effect {
   stat: string;
   amount: number;
-  delay?: number;
+}
+
+export interface RegionEffect {
+  regionKey: string;
+  stat: "trust" | "mood" | "economicPressure" | "publicServicePressure";
+  amount: number;
 }
 
 export interface DecisionOption {
   label: string;
+  summary: string;
   effects: Effect[];
+  regionEffects?: RegionEffect[];
 }
 
 export interface Decision {
   id: string;
+  turn: number;
   title: string;
   description: string;
+  issueTag: string;
+  regionTags: string[];
   options: DecisionOption[];
+}
+
+export interface RegionState {
+  key: string;
+  name: string;
+  capital: string;
+  identity: string;
+  clubAnchor: string;
+  dominantIssue: string;
+  politicalTemperament: string;
+  trust: number;
+  mood: number;
+  economicPressure: number;
+  publicServicePressure: number;
+}
+
+export interface TurnRecord {
+  turn: number;
+  decisionId: string;
+  decisionTitle: string;
+  optionLabel: string;
+  issueTag: string;
+}
+
+export interface GameState {
+  country: Country;
+  regions: RegionState[];
+  turn: number;
+  maxTurns: number;
+  history: TurnRecord[];
 }

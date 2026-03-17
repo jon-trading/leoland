@@ -1,0 +1,15 @@
+ideas:
+  - title: New national celebration
+    kind: event_idea
+    prompt: What does Leoland celebrate together, and why does it matter?
+    status: inbox
+  - title: A city with a big personality
+    kind: city_idea
+    prompt: Invent a city that feels unlike every other place in Leoland.
+    status: inbox
+  - title: Harbour Lantern Festival
+    kind: event_idea
+    prompt: A midsummer lantern night that shows how each port town celebrates
+      together.
+    status: inbox
+    added_via: workshop
