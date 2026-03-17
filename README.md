@@ -48,6 +48,7 @@ npm run workshop
 
 Start with:
 
+- [Leo onboarding pack](/srv/leoland/leoland-mvp/docs/leoland/leo_onboarding_pack_v1.md)
 - [Welcome to Leoland](/srv/leoland/leoland-mvp/docs/leoland/leoland_welcome_for_leo_v1.md)
 - [How Leo can add to Leoland](/srv/leoland/leoland-mvp/docs/leoland/how_leo_can_add_to_leoland_v1.md)
 - [Leo workshop mode](/srv/leoland/leoland-mvp/docs/leoland/leo_workshop_mode_v1.md)
