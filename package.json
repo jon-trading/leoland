@@ -6,6 +6,7 @@
   "scripts": {
     "play": "npx ts-node play.ts",
     "check": "npx tsc --noEmit",
+    "workshop": "npx ts-node scripts/workshop.ts",
     "test": "echo \"No automated tests yet\""
   },
   "keywords": [

@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
 
-import { Country } from "./types";
+import { Country, RegionState } from "./types";
 
 export interface LeolandCountrySeed {
   country: {
@@ -29,11 +29,30 @@ export interface LeolandCountrySeed {
   };
 }
 
+export interface LeolandRegionsSeed {
+  regions: Array<{
+    key: string;
+    name: string;
+    capital: string;
+    identity: string;
+    club_anchor: string;
+    trust_tendency: number;
+    economic_pressure: number;
+    public_service_pressure: number;
+    political_temperament: string;
+    dominant_issue: string;
+  }>;
+}
+
 const COUNTRY_SEED_PATH = path.resolve(__dirname, "..", "data", "universe", "leoland_country_seed_v1.yaml");
+const REGIONS_SEED_PATH = path.resolve(__dirname, "..", "data", "universe", "leoland_regions_seed_v1.yaml");
 
 export function loadLeolandCountrySeed(): LeolandCountrySeed {
-  const raw = fs.readFileSync(COUNTRY_SEED_PATH, "utf8");
-  return parse(raw) as LeolandCountrySeed;
+  return parse(fs.readFileSync(COUNTRY_SEED_PATH, "utf8")) as LeolandCountrySeed;
+}
+
+export function loadLeolandRegionsSeed(): LeolandRegionsSeed {
+  return parse(fs.readFileSync(REGIONS_SEED_PATH, "utf8")) as LeolandRegionsSeed;
 }
 
 export function createPrototypeCountryFromSeed(seed: LeolandCountrySeed): Country {
@@ -75,4 +94,20 @@ export function createPrototypeCountryFromSeed(seed: LeolandCountrySeed): Countr
       civicResponsibility: 72,
     },
   };
+}
+
+export function createPrototypeRegionsFromSeed(seed: LeolandRegionsSeed): RegionState[] {
+  return seed.regions.map((region) => ({
+    key: region.key,
+    name: region.name,
+    capital: region.capital,
+    identity: region.identity,
+    clubAnchor: region.club_anchor,
+    dominantIssue: region.dominant_issue,
+    politicalTemperament: region.political_temperament,
+    trust: region.trust_tendency,
+    mood: 58,
+    economicPressure: region.economic_pressure,
+    publicServicePressure: region.public_service_pressure,
+  }));
 }

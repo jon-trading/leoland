@@ -11,10 +11,11 @@ Leoland is a Leo-first country leadership / governance game in early prototype f
 
 ## Current runtime posture
 
-- local TypeScript prototype
+- local TypeScript playable shell
 - entrypoint: `play.ts`
 - current run path: `npm run play`
 - type-check path: `npm run check`
+- Leo workshop path: `npm run workshop`
 - public deployment: none
 
 ## Current project posture
@@ -28,8 +29,10 @@ Leoland is a Leo-first country leadership / governance game in early prototype f
 ## What the repo currently contains
 
 - a small TypeScript turn-simulation prototype
-- a canonical Leoland country seed
+- a canonical Leoland country + region seed
+- a bounded four-turn playable shell
 - a clubs/regions seed for later cultural and regional identity work
+- a Leo inbox lane under `data/contributions/leo/`
 - a Leo-friendly documentation path for expanding the universe safely
 
 ## Quick start
@@ -38,7 +41,17 @@ Leoland is a Leo-first country leadership / governance game in early prototype f
 npm ci
 npm run check
 npm run play
+npm run workshop
 ```
+
+## New here?
+
+Start with:
+
+- [Leo onboarding pack](/srv/leoland/leoland-mvp/docs/leoland/leo_onboarding_pack_v1.md)
+- [Welcome to Leoland](/srv/leoland/leoland-mvp/docs/leoland/leoland_welcome_for_leo_v1.md)
+- [How Leo can add to Leoland](/srv/leoland/leoland-mvp/docs/leoland/how_leo_can_add_to_leoland_v1.md)
+- [Leo workshop mode](/srv/leoland/leoland-mvp/docs/leoland/leo_workshop_mode_v1.md)
 
 ## Notes
 

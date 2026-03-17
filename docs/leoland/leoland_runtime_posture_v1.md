@@ -2,7 +2,7 @@
 
 ## Current runtime truth
 
-Leoland runs on stackhost1 as a local TypeScript prototype.
+Leoland runs on stackhost1 as a local TypeScript playable shell.
 
 Verified command:
 
@@ -24,6 +24,8 @@ The current build path is healthy enough to:
 - type-check with `npm run check`
 - run the prototype from the canonical repo path
 - load Leoland world seed data from repo-tracked YAML
+- accept live player input through the terminal
+- append Leo ideas through `npm run workshop`
 
 ## Current limitations
 
@@ -32,7 +34,7 @@ The current build path is healthy enough to:
 - no persistence layer
 - no database
 - no container/runtime topology yet
-- current runtime is still terminal-first and single-turn
+- current runtime is still terminal-first and intentionally lightweight
 
 ## Operational posture
 

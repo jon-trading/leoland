@@ -1,0 +1,61 @@
+regions:
+  - key: north_crown
+    name: North Crown
+    capital: Northhaven
+    identity: Maritime industry, union memory, and North Atlantic grit.
+    club_anchor: Northhaven Mariners
+    trust_tendency: 64
+    economic_pressure: 58
+    public_service_pressure: 46
+    political_temperament: pragmatic_solidarity
+    dominant_issue: cost_of_living
+  - key: eastbridge
+    name: Eastbridge
+    capital: Leograd
+    identity: Capital-region confidence, institutional power, and media pressure.
+    club_anchor: Leograd Assembly
+    trust_tendency: 59
+    economic_pressure: 47
+    public_service_pressure: 54
+    political_temperament: reformist_establishment
+    dominant_issue: trust_in_public_institutions
+  - key: greenfold
+    name: Greenfold
+    capital: Valemere
+    identity: Ecological pride, civic patience, and long-view stewardship.
+    club_anchor: Greenfold Forest
+    trust_tendency: 68
+    economic_pressure: 42
+    public_service_pressure: 49
+    political_temperament: community_green
+    dominant_issue: energy_transition
+  - key: southwatch
+    name: Southwatch
+    capital: Southwatch
+    identity: Industrial effort, insecurity about decline, and restless dignity.
+    club_anchor: Southwatch Forge
+    trust_tendency: 48
+    economic_pressure: 73
+    public_service_pressure: 62
+    political_temperament: jobs_first_volatile
+    dominant_issue: regional_inequality
+  - key: frostmere
+    name: Frostmere
+    capital: Frostmere
+    identity: Strategic frontier endurance, service, and defensive realism.
+    club_anchor: Frostmere Lights
+    trust_tendency: 61
+    economic_pressure: 55
+    public_service_pressure: 45
+    political_temperament: security_loyalist
+    dominant_issue: defence_and_alliance_burden
+  - key: riverglass
+    name: Riverglass
+    capital: Aurum Bay
+    identity: Mixed urban-rural trade corridor balancing ambition and fairness.
+    club_anchor: Riverglass United
+    trust_tendency: 56
+    economic_pressure: 60
+    public_service_pressure: 58
+    political_temperament: centrist_balancer
+    dominant_issue: housing_supply

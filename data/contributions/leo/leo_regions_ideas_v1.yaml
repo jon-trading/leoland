@@ -1,0 +1,7 @@
+region_ideas:
+  - region_key: north_crown
+    prompt: What makes people from this region proud?
+    notes: []
+  - region_key: southwatch
+    prompt: What problem does this place worry about most?
+    notes: []

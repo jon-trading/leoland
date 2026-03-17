@@ -4,24 +4,24 @@
 
 Leoland is currently:
 
-- mostly a prototype shell
+- a first playable shell
 - partly an engine experiment
 - partly a seed for a richer leadership/society simulation
 
-It is not yet a playable world-state game.
+It is not yet a deep world-state game.
 
 ## Best next bounded tranche
 
-The best next move is:
+The best next move after L2 is:
 
-1. runtime cleanup and first playable shell
-2. define first Leoland world-state schema from the new seed layer
-3. add first region/province and party structures to runtime data
-4. introduce a real turn loop based on Leoland canon rather than illustrative decisions
+1. define first Leoland world-state schema from the new seed layer
+2. add first region/province and party structures to runtime data
+3. deepen issue chains and elector/party pressure
+4. keep Leo's inbox-to-canon flow lightweight and deliberate
 
 ## Strong recommendation
 
-Do not jump straight into many mechanics.
+Do not jump straight into many mechanics or a hosted product shell.
 
 First build:
 
