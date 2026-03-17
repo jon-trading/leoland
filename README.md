@@ -44,6 +44,14 @@ npm run play
 npm run workshop
 ```
 
+## New here?
+
+Start with:
+
+- [Welcome to Leoland](/srv/leoland/leoland-mvp/docs/leoland/leoland_welcome_for_leo_v1.md)
+- [How Leo can add to Leoland](/srv/leoland/leoland-mvp/docs/leoland/how_leo_can_add_to_leoland_v1.md)
+- [Leo workshop mode](/srv/leoland/leoland-mvp/docs/leoland/leo_workshop_mode_v1.md)
+
 ## Notes
 
 This repo was promoted server-first so day-to-day development no longer depends on a laptop copy as the operational source-of-truth.
