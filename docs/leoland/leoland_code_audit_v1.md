@@ -11,6 +11,7 @@ It already has:
 - a turn executor
 - decision/effect mechanics
 - basic derived-stat logic
+- an editable YAML-backed Leoland world seed
 
 It does not yet have:
 
@@ -30,8 +31,8 @@ It does not yet have:
 
 ## What is placeholder
 
-- current country seed is `Finland`
-- current decisions are example/demo content
+- the runtime is still a single-turn prototype
+- the decision set is still deliberately small and illustrative
 - player choice flow is hard-coded in `play.ts`
 - no input loop or save state exists
 
@@ -41,6 +42,7 @@ It does not yet have:
 - leader quality model
 - civic and ethical framing in decisions
 - legacy scoring and unrest/trust/cohesion interplay
+- Leoland canon seed for country identity and club/regional culture
 
 ## What is still generic engine scaffolding
 
@@ -53,7 +55,7 @@ It does not yet have:
 
 - path-based mutation via `any` is flexible but easy to misuse later
 - current state model is flat and will need a world-state schema before scale-up
-- Finland placeholder should not be mistaken for intended canon
+- seed-to-runtime mapping is still a prototype adapter, not the final world-state schema
 - `RUN_LEOLAND.bat` is import baggage, not a server-first runtime path
 
 ## Honest conclusion

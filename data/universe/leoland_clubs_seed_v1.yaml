@@ -1,12 +1,46 @@
-clubs_and_regions:
-  role: cultural_regional_institutions
-  political_overlap: true
-  geography_overlap: true
-  future_uses:
-    - regional_flavor
-    - province_identity
-    - social_mood
-    - soft_political_identity
-  deferred:
-    - score_generator_repo_intake
-    - hard_gameplay_mechanics
+clubs:
+  - club_name: Northhaven Mariners
+    city: Northhaven
+    region: North Crown
+    identity: working-port pride and disciplined resilience
+    cultural_flavour: pragmatic, union-friendly, outward-looking
+    future_influences:
+      - regional_pride
+      - labour_mood
+      - coastal_media_attention
+  - club_name: Leograd Assembly
+    city: Leograd
+    region: Eastbridge
+    identity: capital-city prestige and establishment pressure
+    cultural_flavour: politically visible, ambitious, and status-aware
+    future_influences:
+      - national_media_attention
+      - elite_pressure
+      - civic_expectation
+  - club_name: Greenfold Forest
+    city: Valemere
+    region: Greenfold
+    identity: environmental stewardship and communal patience
+    cultural_flavour: civic-minded, ecological, and quietly stubborn
+    future_influences:
+      - climate_mood
+      - community_trust
+      - youth_engagement
+  - club_name: Southwatch Forge
+    city: Southwatch
+    region: Southwatch
+    identity: industrial grit and frustration with neglect
+    cultural_flavour: proud, tough, and politically volatile
+    future_influences:
+      - jobs_pressure
+      - protest_risk
+      - regional_identity
+  - club_name: Frostmere Lights
+    city: Frostmere
+    region: Frostmere
+    identity: frontier endurance and strategic defence culture
+    cultural_flavour: security-minded, loyal, and stoic
+    future_influences:
+      - defence_mood
+      - frontier_identity
+      - national_solidarity

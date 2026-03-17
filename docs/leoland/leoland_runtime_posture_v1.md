@@ -7,7 +7,7 @@ Leoland runs on stackhost1 as a local TypeScript prototype.
 Verified command:
 
 ```bash
-npx ts-node play.ts
+npm run play
 ```
 
 ## Environment
@@ -21,8 +21,9 @@ npx ts-node play.ts
 The current build path is healthy enough to:
 
 - install dependencies with `npm ci`
-- type-check with `npx tsc --noEmit`
+- type-check with `npm run check`
 - run the prototype from the canonical repo path
+- load Leoland world seed data from repo-tracked YAML
 
 ## Current limitations
 
@@ -31,10 +32,17 @@ The current build path is healthy enough to:
 - no persistence layer
 - no database
 - no container/runtime topology yet
-- current seed data still models Finland, not Leoland
+- current runtime is still terminal-first and single-turn
 
 ## Operational posture
 
 - canonical server repo: `/srv/leoland/leoland-mvp`
 - imported snapshot source: `/home/jon/leoland-mvp`
 - laptop is not required for day-to-day source-of-truth after intake
+
+## Product posture
+
+- current posture: terminal-first prototype
+- next sensible runtime: tiny local playable shell
+- later possible domain: `leoland.jon-trading.com`
+- later hosted posture should follow the simulator, not lead it

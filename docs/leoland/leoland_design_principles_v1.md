@@ -23,3 +23,8 @@ The project should not drift into:
 ## Practical implication for future briefs
 
 Mechanics should be judged not only by whether they are interesting, but by whether they reinforce the intended moral and educational shape of the game.
+
+## Leo-first implication
+
+Worldbuilding and contribution structures should stay simple enough that Leo can keep shaping the universe directly.
+The project should not drift into a closed adult-only architecture where the world is technically impressive but no longer feels like Leo's.

@@ -1,16 +1,24 @@
 {
   "name": "leoland-mvp",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Leo-first country leadership simulator prototype for the Leoland universe.",
+  "main": "play.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "play": "npx ts-node play.ts",
+    "check": "npx tsc --noEmit",
+    "test": "echo \"No automated tests yet\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "leoland",
+    "simulation",
+    "leadership",
+    "worldbuilding"
+  ],
+  "author": "Jon and Leo",
   "license": "ISC",
   "dependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
-  },
-  "description": ""
+    "typescript": "^5.8.2",
+    "yaml": "^2.8.2"
+  }
 }

@@ -1,13 +1,58 @@
 country:
   name: Leoland
+  short_description: Large North Atlantic island democracy balancing prosperity, fairness, and long-horizon stewardship.
   geography: large_north_atlantic_island_nation
   eu_membership: true
   population: 277000000
+  electorate: 201000000
+  capital_city: Leograd
+  major_cities:
+    - Leograd
+    - Northhaven
+    - Aurum Bay
+    - Stonerift
+    - Valemere
   provinces_or_states: 49
+  province_names:
+    - North Crown
+    - Western Reach
+    - Southwatch
+    - Harbormark
+    - Greenfold
+    - Frostmere
+    - Riverglass
+    - Eastbridge
   government_form: parliamentary_democracy
+  legislature_name: Assembly of Leoland
   party_system: five_party
+  major_parties:
+    - Civic Future Alliance
+    - Workers and Families Party
+    - Green Horizon
+    - Liberty and Enterprise Bloc
+    - Regional Voice Movement
   economy_scale: large
+  headline_sectors:
+    - advanced_manufacturing
+    - shipping_and_logistics
+    - clean_energy
+    - public_research
+    - digital_services
   military_posture: strong
-  regional_political_variation: true
+  major_issues:
+    - cost_of_living
+    - regional_inequality
+    - housing_supply
+    - energy_transition
+    - defence_and_alliance_burden
+    - trust_in_public_institutions
+  voting_demographics:
+    younger_voters: more progressive, climate-conscious, and reform-oriented
+    older_voters: more stability-seeking, institution-loyal, and security-minded
+    coastal_metros: globalist, innovation-focused, and socially plural
+    industrial_regions: jobs-first, pragmatic, and sensitive to neglect
+    rural_areas: place-rooted, tradition-aware, and distrustful of distant elites
   notes:
-    - major national issues and voting-demographic patterns matter
+    - Leoland has strong regional political variation.
+    - National identity mixes solidarity, competence, and proud local loyalties.
+    - Public trust is a central design axis rather than background lore.
