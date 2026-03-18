@@ -42,6 +42,9 @@ npm ci
 npm run check
 npm run play
 npm run workshop
+cd app && npm install && cd ..
+npm run mobile:check
+npm run mobile:build
 ```
 
 ## New here?
@@ -56,3 +59,9 @@ Start with:
 ## Notes
 
 This repo was promoted server-first so day-to-day development no longer depends on a laptop copy as the operational source-of-truth.
+
+## Mobile shell
+
+The mobile-first, desktop-friendly experience shell now lives in `app/`. Use the root scripts `npm run mobile:check` and `npm run mobile:build` to verify it.
+
+If you have not installed the mobile shell dependencies yet, run `cd app && npm install` once first.

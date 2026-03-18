@@ -7,7 +7,10 @@
     "play": "npx ts-node play.ts",
     "check": "npx tsc --noEmit",
     "workshop": "npx ts-node scripts/workshop.ts",
-    "test": "echo \"No automated tests yet\""
+    "test": "echo \"No automated tests yet\"",
+    "mobile:dev": "npm --prefix app run dev",
+    "mobile:build": "npm --prefix app run build",
+    "mobile:check": "npm --prefix app run check"
   },
   "keywords": [
     "leoland",
