@@ -2,9 +2,11 @@ interface ReflectionCardProps {
   reflection: string;
   leaderArchetype: string;
   changed: Array<{ label: string; delta: number }>;
+  pulseSummary: string;
+  culturalMoment: string;
 }
 
-export function ReflectionCard({ reflection, leaderArchetype, changed }: ReflectionCardProps) {
+export function ReflectionCard({ reflection, leaderArchetype, changed, pulseSummary, culturalMoment }: ReflectionCardProps) {
   return (
     <section className="reflection-card">
       <div className="reflection-card__top">
@@ -12,6 +14,10 @@ export function ReflectionCard({ reflection, leaderArchetype, changed }: Reflect
         <span className="badge badge--soft">{leaderArchetype}</span>
       </div>
       <p className="reflection-card__body">{reflection}</p>
+      <div className="reflection-card__pulse">
+        <strong>{culturalMoment}</strong>
+        <span>{pulseSummary}</span>
+      </div>
       <div className="reflection-card__changes">
         {changed.map((item) => (
           <div key={item.label} className={`change-pill ${item.delta >= 0 ? 'change-pill--up' : 'change-pill--down'}`}>

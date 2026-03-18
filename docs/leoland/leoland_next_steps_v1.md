@@ -15,9 +15,9 @@ It is not yet a finished mobile product or a full long-arc society simulation.
 
 The best next move after L4 is:
 
-1. deepen regional mood, party pressure, and civic institution depth
-2. make scenario chains more stateful and longer-lived
-3. add province and institution nuance without losing short-session clarity
+1. deepen institution and community systems without losing warmth
+2. make country pulse, regional life, and shared infrastructure feel more alive
+3. add longer scenario continuity and clearer social consequences
 4. keep Leo's inbox-to-canon flow lightweight and deliberate
 
 ## Strong recommendation
@@ -32,6 +32,6 @@ First build:
 
 ## Likely later sequence
 
-- L5: regional mood, party pressure, and civic institution depth
-- L6: football and cultural context hooks for mood, headlines, and belonging
+- L5: living country pulse, region texture, and institution life
+- L6: deeper institution and community systems, including shared infrastructure flavor
 - L7: longer scenario chains, civic resilience systems, and richer public-life consequences

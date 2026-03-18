@@ -6,12 +6,15 @@
   --leaf: #87a163;
   --ink: #fbf7ed;
   --muted: #d6d0c2;
+  --muted-2: #aebdb2;
   --card: rgba(8, 23, 31, 0.82);
   --card-soft: rgba(16, 56, 69, 0.88);
+  --card-gold: rgba(64, 47, 20, 0.82);
   --line: rgba(255, 240, 196, 0.18);
   --gold: #ffd363;
   --rose: #f38f8f;
   --mint: #89dfc1;
+  --sky: #bde4f0;
   --shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
   color: var(--ink);
   background: radial-gradient(circle at top, #127382 0%, var(--bg) 45%, var(--bg-deep) 100%);
@@ -21,6 +24,7 @@
 * { box-sizing: border-box; }
 body { margin: 0; min-height: 100vh; background: transparent; }
 button { font: inherit; }
+small { color: var(--muted-2); line-height: 1.45; }
 
 .mobile-scene {
   min-height: 100vh;
@@ -28,6 +32,7 @@ button { font: inherit; }
   background:
     radial-gradient(circle at 20% 10%, rgba(255, 211, 99, 0.14), transparent 30%),
     radial-gradient(circle at 80% 0%, rgba(137, 223, 193, 0.18), transparent 25%),
+    radial-gradient(circle at 50% 100%, rgba(189, 228, 240, 0.12), transparent 30%),
     linear-gradient(180deg, rgba(255,255,255,0.05), transparent 20%);
 }
 
@@ -53,6 +58,10 @@ button { font: inherit; }
   padding: 22px;
   display: grid;
   gap: 14px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 211, 99, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255,255,255,0.04), transparent 35%),
+    var(--card);
 }
 
 .hero-card h1,
@@ -74,6 +83,12 @@ button { font: inherit; }
   letter-spacing: 0.16em;
   font-size: 0.73rem;
   text-transform: uppercase;
+}
+.tiny-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted-2);
 }
 
 .hero-badges, .region-tags, .reflection-card__changes, .mini-metrics { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -116,10 +131,15 @@ button { font: inherit; }
 .map-region:hover { transform: translateY(-2px); }
 .map-region__label { fill: #082431; font-size: 12px; font-weight: 700; }
 .map-region__sub { fill: #20444f; font-size: 8px; }
+.map-region__pulse { fill: #20444f; font-size: 7px; letter-spacing: 0.08em; text-transform: uppercase; }
 
 .panel-grid { display: grid; gap: 16px; }
 .panel { padding: 18px; }
-.panel--accent { background: var(--card-soft); }
+.panel--accent {
+  background:
+    radial-gradient(circle at top right, rgba(137, 223, 193, 0.12), transparent 30%),
+    var(--card-soft);
+}
 .panel h3 { margin-top: 0; }
 .panel-actions { display: flex; gap: 12px; }
 .primary-button,
@@ -136,6 +156,41 @@ button { font: inherit; }
 }
 .primary-button { background: var(--gold); color: #12212b; font-weight: 700; }
 .secondary-button { background: rgba(255,255,255,0.12); color: var(--ink); }
+
+.pulse-panel {
+  display: grid;
+  gap: 14px;
+}
+.pulse-panel__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.pulse-grid,
+.mini-story-grid {
+  display: grid;
+  gap: 10px;
+}
+.pulse-chip,
+.story-box {
+  padding: 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: grid;
+  gap: 6px;
+}
+.pulse-chip strong,
+.story-box strong {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.pulse-chip--soft,
+.story-box--warning {
+  background: rgba(255, 211, 99, 0.08);
+}
 
 .decision-card,
 .reflection-card,
@@ -158,6 +213,14 @@ button { font: inherit; }
   margin-top: 12px;
   color: var(--gold);
   font-size: 0.86rem;
+}
+.reflection-card__pulse {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .change-pill {
   padding: 8px 12px;
@@ -208,4 +271,9 @@ button { font: inherit; }
 
 @media (min-width: 720px) {
   .panel-grid { grid-template-columns: 1fr 1fr; }
+  .pulse-grid,
+  .mini-story-grid { grid-template-columns: 1fr 1fr; }
+  .mobile-shell {
+    width: min(100%, 920px);
+  }
 }

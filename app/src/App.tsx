@@ -4,7 +4,22 @@ import { MapCard } from './components/MapCard';
 import { MetricPill } from './components/MetricPill';
 import { ReflectionCard } from './components/ReflectionCard';
 import { applyScenarioOption, canAdvance, createNewSession } from './game/engine';
-import { currentNationalPosture, describeLeader, institutionsUnderStrain, labelForMetric, mostImportantIssues, stewardshipSignal, topPressuredRegions } from './game/selectors';
+import {
+  countryPulse,
+  currentNationalPosture,
+  describeLeader,
+  institutionFeelingSummary,
+  institutionSpotlight,
+  institutionsUnderStrain,
+  labelForMetric,
+  mostHopefulRegions,
+  mostImportantIssues,
+  mostNeglectedRegions,
+  regionFeelingSummary,
+  stewardshipSignal,
+  strongestInstitutions,
+  topPressuredRegions,
+} from './game/selectors';
 import { MetricKey, RegionState, ScenarioOption, WorldState } from './game/types';
 
 type ScreenKey = 'home' | 'region' | 'decision' | 'reflection';
@@ -33,8 +48,13 @@ export default function App() {
   const leaderArchetype = useMemo(() => describeLeader(world.country), [world.country]);
   const nationalPosture = useMemo(() => currentNationalPosture(world.country), [world.country]);
   const stewardship = useMemo(() => stewardshipSignal(world.country), [world.country]);
+  const pulse = useMemo(() => countryPulse(world.country), [world.country]);
   const pressuredRegions = useMemo(() => topPressuredRegions(world.regions), [world.regions]);
+  const hopefulRegions = useMemo(() => mostHopefulRegions(world.regions), [world.regions]);
+  const neglectedRegions = useMemo(() => mostNeglectedRegions(world.regions), [world.regions]);
   const strainedInstitutions = useMemo(() => institutionsUnderStrain(world.institutions), [world.institutions]);
+  const confidentInstitutions = useMemo(() => strongestInstitutions(world.institutions), [world.institutions]);
+  const spotlightInstitution = useMemo(() => institutionSpotlight(world), [world]);
   const topIssues = useMemo(() => mostImportantIssues(world), [world]);
 
   function selectRegion(regionId: string) {
@@ -105,19 +125,66 @@ export default function App() {
                   trust: region.trust,
                   wellbeing: region.wellbeing,
                   pressure: region.pressure,
+                  belonging: region.belonging,
+                  civicPride: region.civicPride,
+                  neglectFeeling: region.neglectFeeling,
                 },
+                pulseLabel:
+                  region.neglectFeeling >= 60
+                    ? 'Strained'
+                    : region.communityWarmth >= 66 && region.civicPride >= 66
+                      ? 'Hopeful'
+                      : 'Holding',
+                pulseTone:
+                  region.neglectFeeling >= 60
+                    ? 'strained'
+                    : region.communityWarmth >= 66 && region.civicPride >= 66
+                      ? 'hopeful'
+                      : 'steady',
               }))}
               selectedRegionId={world.selectedRegionId}
               onSelectRegion={selectRegion}
             />
+
+            <section className="panel pulse-panel panel--accent">
+              <div className="pulse-panel__top">
+                <div>
+                  <p className="eyebrow">Country pulse</p>
+                  <h2>{pulse.emotionalWeather}</h2>
+                </div>
+                <div className="region-tags">
+                  <span className="badge">{leaderArchetype}</span>
+                  <span className="badge badge--soft">{stewardship}</span>
+                </div>
+              </div>
+              <p>{pulse.summary}</p>
+              <div className="pulse-grid">
+                <div className="pulse-chip">
+                  <span className="tiny-label">National story</span>
+                  <strong>{pulse.nationalStory}</strong>
+                </div>
+                <div className="pulse-chip pulse-chip--soft">
+                  <span className="tiny-label">Cultural weather</span>
+                  <strong>{pulse.culturalMoment.title}</strong>
+                  <span>{pulse.culturalMoment.summary}</span>
+                </div>
+              </div>
+            </section>
+
             <section className="panel-grid">
               <section className="panel">
                 <p className="eyebrow">National posture</p>
                 <h2>{nationalPosture}</h2>
                 <p>{world.country.headlineSituation}</p>
-                <div className="region-tags">
-                  <span className="badge">{leaderArchetype}</span>
-                  <span className="badge badge--soft">{stewardship}</span>
+                <div className="mini-story-grid">
+                  <div className="story-box">
+                    <span className="tiny-label">Best thing improving</span>
+                    <strong>{pulse.bestImproving}</strong>
+                  </div>
+                  <div className="story-box story-box--warning">
+                    <span className="tiny-label">Most fragile now</span>
+                    <strong>{pulse.mostFragile}</strong>
+                  </div>
                 </div>
               </section>
               <section className="panel panel--accent">
@@ -131,6 +198,7 @@ export default function App() {
                 )}
               </section>
             </section>
+
             <section className="panel-grid">
               <section className="panel">
                 <p className="eyebrow">Most pressured regions</p>
@@ -139,22 +207,75 @@ export default function App() {
                     <li key={region.id}>
                       <strong>{region.name}</strong>
                       <span>{region.currentKeyIssue}</span>
+                      <small>{region.headline}</small>
                     </li>
                   ))}
                 </ul>
               </section>
+              <section className="panel">
+                <p className="eyebrow">Institution spotlight</p>
+                <h2>{spotlightInstitution.name}</h2>
+                <p>{pulse.institutionSpotlightSummary}</p>
+                <div className="mini-metrics">
+                  <span className="badge badge--soft">Morale {spotlightInstitution.morale}</span>
+                  <span className="badge badge--soft">Heldness {spotlightInstitution.heldness}</span>
+                  <span className="badge badge--soft">Strain {spotlightInstitution.strain}</span>
+                </div>
+              </section>
+            </section>
+
+            <section className="panel-grid">
+              <section className="panel">
+                <p className="eyebrow">Most hopeful regions</p>
+                <ul className="pressure-list">
+                  {hopefulRegions.map((region) => (
+                    <li key={region.id}>
+                      <strong>{region.name}</strong>
+                      <span>{region.identity.whatPeopleCareAbout}</span>
+                      <small>{regionFeelingSummary(region)}</small>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              <section className="panel">
+                <p className="eyebrow">Where neglect still bites</p>
+                <ul className="pressure-list">
+                  {neglectedRegions.map((region) => (
+                    <li key={region.id}>
+                      <strong>{region.name}</strong>
+                      <span>{region.currentKeyIssue}</span>
+                      <small>{regionFeelingSummary(region)}</small>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </section>
+
+            <section className="panel-grid">
               <section className="panel">
                 <p className="eyebrow">Institutions under strain</p>
                 <ul className="pressure-list">
                   {strainedInstitutions.map((institution) => (
                     <li key={institution.id}>
                       <strong>{institution.name}</strong>
-                      <span>{institution.note}</span>
+                      <span>{institutionFeelingSummary(institution)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              <section className="panel">
+                <p className="eyebrow">Institutions helping life feel held</p>
+                <ul className="pressure-list">
+                  {confidentInstitutions.map((institution) => (
+                    <li key={institution.id}>
+                      <strong>{institution.name}</strong>
+                      <span>{institutionFeelingSummary(institution)}</span>
                     </li>
                   ))}
                 </ul>
               </section>
             </section>
+
             <section className="panel">
               <p className="eyebrow">Top issue tracks</p>
               <div className="issue-grid">
@@ -173,7 +294,13 @@ export default function App() {
         {screen === 'decision' && activeScenario && <DecisionCard decision={activeScenario} onChoose={chooseOption} />}
         {screen === 'reflection' && (
           <>
-            <ReflectionCard reflection={lastReflection} leaderArchetype={leaderArchetype} changed={lastDelta} />
+            <ReflectionCard
+              reflection={lastReflection}
+              leaderArchetype={leaderArchetype}
+              changed={lastDelta}
+              pulseSummary={pulse.summary}
+              culturalMoment={pulse.culturalMoment.title}
+            />
             <section className="panel-grid">
               <section className="panel">
                 <p className="eyebrow">What improved</p>
@@ -203,6 +330,27 @@ export default function App() {
                     </li>
                   ))}
                 </ul>
+              </section>
+              <section className="panel panel--accent">
+                <p className="eyebrow">What kind of society is emerging</p>
+                <p>{pulse.nationalStory}</p>
+                <div className="mini-story-grid">
+                  <div className="story-box">
+                    <span className="tiny-label">Best sign of life</span>
+                    <strong>{pulse.bestImproving}</strong>
+                  </div>
+                  <div className="story-box story-box--warning">
+                    <span className="tiny-label">Still needs care</span>
+                    <strong>{pulse.mostFragile}</strong>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section className="panel-grid">
+              <section className="panel">
+                <p className="eyebrow">National pulse now</p>
+                <h2>{pulse.emotionalWeather}</h2>
+                <p>{pulse.summary}</p>
               </section>
               <section className="panel panel--accent">
                 <p className="eyebrow">Next move</p>
@@ -275,11 +423,30 @@ function RegionView({ region, onBack, onDecision }: { region: RegionState; onBac
             <MetricPill label="Resilience" value={region.resilience} tone="good" />
             <MetricPill label="Service strain" value={region.serviceStrain} tone="warning" />
           </div>
+          <div className="mini-metrics">
+            <MetricPill label="Civic pride" value={region.civicPride} tone="good" />
+            <MetricPill label="Warmth" value={region.communityWarmth} tone="good" />
+          </div>
         </section>
+        <section className="panel">
+          <h3>Youth and confidence</h3>
+          <div className="mini-metrics">
+            <MetricPill label="Youth outlook" value={region.youthOutlook} tone="good" />
+            <MetricPill label="Neglect feeling" value={region.neglectFeeling} tone="warning" />
+          </div>
+          <p>{regionFeelingSummary(region)}</p>
+        </section>
+      </section>
+      <section className="panel-grid">
         <section className="panel">
           <h3>Regional note</h3>
           <p>{region.notes}</p>
           <span className="badge badge--soft">{region.identity.moodLabel}</span>
+        </section>
+        <section className="panel panel--accent">
+          <h3>Cultural weather</h3>
+          <p>{region.identity.clubAnchor} gives this region a shared ritual, but it is only part of the story.</p>
+          <p className="muted">Football is soft civic texture here: belonging, conversation, pride, and the feeling that place still matters.</p>
         </section>
       </section>
       <div className="panel-actions">

@@ -53,3 +53,18 @@ It should not take over the stewardship game.
 ## Honest note
 
 The separate football repo/folder has not yet been deeply reviewed in this pass, so this is a relationship posture document rather than a full system-integration plan.
+
+
+## L5 posture update
+
+Football is now treated as soft civic weather inside the country game.
+
+That means it can support:
+
+- regional rituals
+- belonging
+- civic pride
+- morale shifts
+- light rivalry without hostility
+
+It still must not become the main game loop or the main engine of national success.

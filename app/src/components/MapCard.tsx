@@ -42,6 +42,7 @@ export function MapCard({ regions, selectedRegionId, onSelectRegion }: MapCardPr
         {regions.map((region) => {
           const pos = positions[region.id];
           const selected = selectedRegionId === region.id;
+          const toneColor = region.pulseTone === 'hopeful' ? '#9af1c5' : region.pulseTone === 'strained' ? '#ffd363' : '#d6f2ff';
           return (
             <g key={region.id} onClick={() => onSelectRegion(region.id)} className="map-region" aria-hidden="true">
               <rect
@@ -54,8 +55,10 @@ export function MapCard({ regions, selectedRegionId, onSelectRegion }: MapCardPr
                 stroke={selected ? '#ffd363' : 'rgba(255,255,255,0.34)'}
                 strokeWidth={selected ? 4 : 2}
               />
+              <circle cx={pos.x + pos.w - 14} cy={pos.y + 14} r="5.5" fill={toneColor} />
               <text x={pos.x + pos.w / 2} y={pos.y + pos.h / 2 - 2} textAnchor="middle" className="map-region__label">{region.name}</text>
               <text x={pos.x + pos.w / 2} y={pos.y + pos.h / 2 + 18} textAnchor="middle" className="map-region__sub">{region.currentPressure}</text>
+              <text x={pos.x + pos.w / 2} y={pos.y + pos.h / 2 + 31} textAnchor="middle" className="map-region__pulse">{region.pulseLabel}</text>
             </g>
           );
         })}

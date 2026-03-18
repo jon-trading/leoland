@@ -54,6 +54,10 @@ export interface RegionState {
   serviceStrain: number;
   belonging: number;
   resilience: number;
+  civicPride: number;
+  youthOutlook: number;
+  communityWarmth: number;
+  neglectFeeling: number;
   currentKeyIssue: string;
   headline: string;
   notes: string;
@@ -73,7 +77,12 @@ export interface RegionSnapshot {
     trust: number;
     wellbeing: number;
     pressure: number;
+    belonging: number;
+    civicPride: number;
+    neglectFeeling: number;
   };
+  pulseLabel: string;
+  pulseTone: 'hopeful' | 'steady' | 'strained';
 }
 
 export interface InstitutionState {
@@ -83,6 +92,9 @@ export interface InstitutionState {
   strain: number;
   publicTrust: number;
   fairnessImpact: number;
+  effectiveness: number;
+  morale: number;
+  heldness: number;
   note: string;
 }
 
@@ -111,6 +123,10 @@ export interface ScenarioOption {
     serviceStrain?: number;
     belonging?: number;
     resilience?: number;
+    civicPride?: number;
+    youthOutlook?: number;
+    communityWarmth?: number;
+    neglectFeeling?: number;
     headline?: string;
   }>;
   institutionEffects?: Array<{
@@ -119,6 +135,9 @@ export interface ScenarioOption {
     strain?: number;
     publicTrust?: number;
     fairnessImpact?: number;
+    effectiveness?: number;
+    morale?: number;
+    heldness?: number;
     note?: string;
   }>;
   issueEffects?: Array<{
@@ -175,6 +194,24 @@ export interface TurnOutcome {
   whatBecameMoreFragile: string[];
 }
 
+export interface CulturalMoment {
+  title: string;
+  summary: string;
+  tone: 'celebration' | 'care' | 'ritual' | 'strain' | 'hope';
+  regionId?: string;
+}
+
+export interface CountryPulse {
+  summary: string;
+  emotionalWeather: string;
+  nationalStory: string;
+  bestImproving: string;
+  mostFragile: string;
+  institutionSpotlightId: InstitutionKey;
+  institutionSpotlightSummary: string;
+  culturalMoment: CulturalMoment;
+}
+
 export interface CountryState {
   turn: number;
   season: string;
@@ -185,6 +222,7 @@ export interface CountryState {
   activeScenarioIds: string[];
   completedScenarioIds: string[];
   history: TurnOutcome[];
+  pulse: CountryPulse;
 }
 
 export interface WorldState {
