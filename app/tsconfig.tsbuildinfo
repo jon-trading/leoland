@@ -1,1 +1,0 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/components/DecisionCard.tsx","./src/components/MapCard.tsx","./src/components/MetricPill.tsx","./src/components/ReflectionCard.tsx","./src/game/data.ts","./src/game/types.ts"],"version":"5.9.3"}

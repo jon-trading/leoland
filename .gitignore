@@ -13,6 +13,7 @@ venv/
 .envrc
 node_modules/
 *.lnk
+*.tsbuildinfo
 
 node_modules/
 dist/
