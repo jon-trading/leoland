@@ -2,7 +2,7 @@
 
 This repository is the canonical server-side source-of-truth for the imported `leoland-mvp` prototype.
 
-Leoland is a Leo-first country leadership / governance game in early prototype form. It is values-led, terminal-first for now, and built to grow from a clean world seed rather than from buried constants.
+Leoland is a Leo-first country leadership / governance game in early prototype form. It is values-led, mobile-first and desktop-friendly, and built to grow from a clean world seed rather than from buried constants.
 
 ## Origin
 
@@ -11,18 +11,19 @@ Leoland is a Leo-first country leadership / governance game in early prototype f
 
 ## Current runtime posture
 
-- local TypeScript playable shell
+- local TypeScript terminal prototype plus mobile-first app shell
 - entrypoint: `play.ts`
 - current run path: `npm run play`
 - type-check path: `npm run check`
 - Leo workshop path: `npm run workshop`
+- mobile shell path: `app/`
 - public deployment: none
 
 ## Current project posture
 
 - canonical repo: `/srv/leoland/leoland-mvp`
 - imported snapshot source: `/home/jon/leoland-mvp`
-- current runtime shape: terminal-first prototype
+- current runtime shape: terminal prototype plus mobile-first app shell
 - current world seed: `data/universe/*.yaml`
 - football companion: separate sibling project later, not merged here
 
@@ -30,7 +31,8 @@ Leoland is a Leo-first country leadership / governance game in early prototype f
 
 - a small TypeScript turn-simulation prototype
 - a canonical Leoland country + region seed
-- a bounded four-turn playable shell
+- a bounded four-turn terminal shell
+- a mobile-first, desktop-friendly app shell with real world-state and scenarios
 - a clubs/regions seed for later cultural and regional identity work
 - a Leo inbox lane under `data/contributions/leo/`
 - a Leo-friendly documentation path for expanding the universe safely
@@ -60,7 +62,7 @@ Start with:
 
 This repo was promoted server-first so day-to-day development no longer depends on a laptop copy as the operational source-of-truth.
 
-## Mobile shell
+## Experience shell
 
 The mobile-first, desktop-friendly experience shell now lives in `app/`. Use the root scripts `npm run mobile:check` and `npm run mobile:build` to verify it.
 

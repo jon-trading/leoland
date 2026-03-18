@@ -6,17 +6,18 @@ Leoland is currently:
 
 - a seed-backed terminal prototype
 - a phone-first, desktop-friendly experience shell
-- a stronger world-and-values scaffold for a richer leadership/society simulation
+- a first real world-state and scenario engine
+- a stronger civic/institutional simulation scaffold for later depth
 
-It is not yet a deep world-state game or a finished mobile product.
+It is not yet a finished mobile product or a full long-arc society simulation.
 
 ## Best next bounded tranche
 
-The best next move after L3 is:
+The best next move after L4 is:
 
-1. define the first real world-state schema from the new seed and region layer
-2. add region/province, party, and institution structures behind the mobile shell
-3. deepen issue chains, regional tension, and stewardship consequences
+1. deepen regional mood, party pressure, and civic institution depth
+2. make scenario chains more stateful and longer-lived
+3. add province and institution nuance without losing short-session clarity
 4. keep Leo's inbox-to-canon flow lightweight and deliberate
 
 ## Strong recommendation
@@ -25,12 +26,12 @@ Do not jump straight into many mechanics or a hosted product shell.
 
 First build:
 
-- first world-state schema
-- first durable scenario/state model
-- first deeper turn loop that expresses the values and success model already captured
+- deeper institution and region interactions
+- richer multi-turn consequences
+- more scenario continuity without losing warmth or readability
 
 ## Likely later sequence
 
-- L3: mobile experience shell and soul DNA
-- L4: world-state and scenario engine
 - L5: regional mood, party pressure, and civic institution depth
+- L6: football and cultural context hooks for mood, headlines, and belonging
+- L7: longer scenario chains, civic resilience systems, and richer public-life consequences

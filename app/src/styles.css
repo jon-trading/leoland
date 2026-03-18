@@ -77,6 +77,8 @@ button { font: inherit; }
 }
 
 .hero-badges, .region-tags, .reflection-card__changes, .mini-metrics { display: flex; gap: 8px; flex-wrap: wrap; }
+.decision-meta,
+.issue-grid { display: flex; gap: 8px; flex-wrap: wrap; }
 .badge {
   display: inline-flex;
   align-items: center;
@@ -151,6 +153,12 @@ button { font: inherit; }
 }
 .decision-option__header { display: grid; gap: 6px; margin-bottom: 10px; }
 .decision-option__header span { color: var(--muted); }
+.decision-option__tradeoff {
+  display: block;
+  margin-top: 12px;
+  color: var(--gold);
+  font-size: 0.86rem;
+}
 .change-pill {
   padding: 8px 12px;
   border-radius: 999px;
@@ -163,6 +171,18 @@ button { font: inherit; }
 .change-pill--down { background: rgba(243, 143, 143, 0.12); color: var(--rose); }
 .pressure-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .pressure-list li { display: grid; gap: 4px; }
+.issue-chip {
+  min-width: 0;
+  flex: 1 1 140px;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: grid;
+  gap: 6px;
+}
+.issue-chip strong { color: var(--ink); }
+.issue-chip span { color: var(--muted); line-height: 1.4; }
 
 .bottom-nav {
   position: sticky;
@@ -180,6 +200,9 @@ button { font: inherit; }
   padding: 12px 8px;
   background: transparent;
   color: var(--muted);
+}
+.bottom-nav button:disabled {
+  opacity: 0.45;
 }
 .bottom-nav button.active { background: rgba(255, 211, 99, 0.16); color: var(--gold); }
 
